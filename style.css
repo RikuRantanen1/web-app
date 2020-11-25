@@ -13,7 +13,7 @@
   text-decoration:underline;
   text-transform:uppercase;
   letter-spacing:0.5em;
-  word-spacing:5em;
+  word-spacing:1em;
 }
 
 .alue1{
@@ -33,7 +33,8 @@
 }
 .linkkilista ul{
   text-align: center;
-  list-style-type: lower-greek;
+  list-style-type: upper-roman;
+  
 }
 .yhteydenotto label{
   display:block;
