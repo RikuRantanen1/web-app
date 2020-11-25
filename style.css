@@ -1,0 +1,67 @@
+.sisalto1{
+  background-color: #FBB5F7;
+  padding:10px;
+  border-right-style:double;
+  border-left-style:double;
+
+
+
+}
+.sisalto1 h1{
+  text-align: center;
+  font-family:Tahoma;
+  text-decoration:underline;
+  text-transform:uppercase;
+  letter-spacing:0.5em;
+  word-spacing:5em;
+}
+
+.alue1{
+  widht:70%;
+  margin:auto;
+ 
+}
+.linkkilista{
+  margin-top:10px;
+  border:1px #166807 solid;
+  padding:20px;
+  border-radius:20px;
+}
+.linkkilista h2{
+  text-align:center;
+  color:#6D0367;
+}
+.linkkilista ul{
+  text-align: center;
+  list-style-type: lower-greek;
+}
+.yhteydenotto label{
+  display:block;
+}
+.yhteydenotto input[type="text"], yhteydenotto textarea{
+  padding:10px;
+  width:100%;
+}
+.nappula{
+  background-color:black;
+  color:white;
+  padding:10px;
+  border:none;
+}
+.nappula:hover{
+  background-color: royalblue;
+  color: white;
+}
+.Laatikko{
+  float: left;
+  width: 33.3%;
+  border:2px solid black;
+  padding:10px;
+  box-sizing: border-box;
+  margin-top:25px
+}
+.asemointi{
+  position: fixed;
+  top:100px;
+  left:0px;
+}
