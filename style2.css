@@ -22,4 +22,32 @@
   border:1px #166807 solid;
   padding:20px;
   border-radius:20px;
-  
+}
+.koulutus2{
+  height: 200px;
+  background-color: #cccccc;
+  background-image: linear-gradient(red, yellow);
+}
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: dashed underline;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: dashed underline;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: dashed underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: dashed underline;
+}
