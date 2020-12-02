@@ -3,9 +3,6 @@
   padding:10px;
   border-right-style:double;
   border-left-style:double;
-
-
-
 }
 .sisalto1 h1{
   text-align: center;
@@ -17,10 +14,9 @@
 }
 
 .alue1{
-  widht:70%;
+  width:70%;
   margin:auto;
- 
-}
+ }
 .linkkilista{
   margin-top:10px;
   border:1px #166807 solid;
@@ -35,7 +31,7 @@
   text-align: center;
   list-style-type: upper-roman;
   
-}
+  }
 .yhteydenotto label{
   display:block;
 }
@@ -65,4 +61,17 @@
   position: fixed;
   top:100px;
   left:0px;
+}
+.lomake-alue input[type="text"], lomake-alue textarea{
+  padding:10px;
+  width:100%;
+  
+}
+.lomake-alue{
+  background-color: #cccccc;
+  background-image: linear-gradient(red, yellow);
+}
+.virhe{
+  background: green;
+  color: white
 }
