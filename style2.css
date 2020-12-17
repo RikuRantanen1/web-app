@@ -1,3 +1,7 @@
+
+
+
+
 .Laatikko{
   float: left;
   width: 25%;
@@ -15,7 +19,7 @@
 .lista{
   position: fixed;
   top:100px;
-  left:0px;
+  right:0px;
 }
 .koulutus{
   margin-top:10px;

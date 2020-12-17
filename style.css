@@ -37,7 +37,7 @@
 }
 .yhteydenotto input[type="text"], yhteydenotto textarea{
   padding:10px;
-  width:100%;
+  width:100%;}
 }
 .nappula{
   background-color:black;
@@ -74,4 +74,9 @@
 .virhe{
   background: green;
   color: white
+}
+.otsikko{
+  text-align: center;
+  background-color: red;
+  padding: 10px;
 }
