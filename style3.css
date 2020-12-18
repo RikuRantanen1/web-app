@@ -1,9 +1,9 @@
 .yhteydenotto label{
   display:block;
 }
-.yhteydenotto input[type="text"], yhteydenotto textarea{
+.opiskelija-lomake input[type="text"], opiskelija-lomake textarea{
   padding:10px;
-  width:70%;}
+  width:70%;
 }
 .nappula{
   background-color:black;
@@ -25,11 +25,7 @@
   box-sizing: border-box;
   margin-top:25px
 }
-.Laatikko2{
-  
-  float: center;
-  
-}
+
 a:link {
   color: white;
   background-color: transparent;
