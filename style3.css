@@ -25,7 +25,11 @@
   box-sizing: border-box;
   margin-top:25px
 }
-
+.Laatikko2{
+  
+  float: center;
+  
+}
 a:link {
   color: white;
   background-color: transparent;
@@ -59,4 +63,8 @@ a:active {
   color:white;
   padding:10px;
   border:none;
+}
+.lomake-alue{
+  background-color: cyan;
+  
 }
