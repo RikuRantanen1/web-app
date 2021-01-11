@@ -1,9 +1,110 @@
 <html>
   <head>
+    <link rel="stylesheet" type=text/css href="Loading.css">
     <title>SääData</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+
   </head>
     <body>
 
-      <script src="weather.js"> </script>
-    </body>
+      <script>
+        
+google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+
+
+var getJSON = function(url, callback) {
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = 'json';
+  
+  xhr.onload = function() {
+  
+      var status = xhr.status;
+      
+      if (status == 200) {
+          callback(null, xhr.response);
+      } else {
+          callback(status);
+      }
+  };
+  
+  xhr.send();
+};
+////valmis/////
+function drawChart() {
+
+
+getJSON('https://func-weather.azurewebsites.net/api/HttpTriggerCSharp2?code=03Hf14xSawGyeGtfxZTCLJ5mGLx0GGusap2f3zssPqg6n3KriqizHg==&deviceId=2c0031001947393035313138&amount=10', function(err, data){
+  let taulukko = `<table width="20%" align="center" style="border=1px solid black"><h1 align="center">Sää-asema</h1><tr><td><b>ilmankosteus%</b></td><td><b>lämpötila</b></td><td><b>valoisuus</td></b>`;
+
+var dataTemp = new google.visualization.DataTable();
+        dataTemp.addColumn('string', 'Päivämäärä');
+        dataTemp.addColumn('number', 'Lämpotila');
+
+var dataHum = new google.visualization.DataTable();
+        dataHum.addColumn('string', 'Päivämäärä');
+        dataHum.addColumn('number', 'Ilmankosteus');
+        
+const historia = data.map(function(mittaus){
+      dataTemp.addRows([
+          [mittaus.Timestamp.split('.')[0], parseInt(mittaus.Temp)]
+        ]);
+
+      dataHum.addRows([
+          [mittaus.Timestamp.split('.')[0], parseInt(mittaus.Hum)]
+        ]);
+   
+      taulukko = taulukko + `<tr><td>${mittaus.Hum}</td><td>${mittaus.Temp}</td><td>${mittaus.Light}</td></tr>`; 
+  
+  });
+  taulukko = taulukko + `</table>`;
+  document.querySelector('#taulukko_div').innerHTML = taulukko;
+
+  // Set chart options
+        var optionsTemp = {'title':'Lämpötila',
+                       'width':1000,
+                       'height':500};
+
+         var optionsHum = {'title':'Ilmankosteus',
+                       'width':1000,
+                       'height':500};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chartTemp = new google.visualization.LineChart(document.getElementById('lampotila_div'));
+        chartTemp.draw(dataTemp, optionsTemp);
+
+        var chartHum = new google.visualization.ColumnChart(document.getElementById('kosteus_div'));
+        chartHum.draw(dataHum, optionsHum);
+});
+}
+
+
+
+</script>
+ 
+  
+<div id="taulukko_div">Lataa...
+  <div class="content">
+     <img src="https://picsum.photos/300/300/?random" / width="1000" height="800">
+</div>
+</div>
+      <div id="lampotila_div"></div>
+      <div id="kosteus_div"></div>
+
+
+
+</div>
+
+
+    
+      
+      
+   
+   </body>
 </html>
