@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link rel="stylesheet" type=text/css href="Loading.css">
+   <link rel="stylesheet" type=text/css href="style2.css">
     <title>SääData</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
@@ -50,6 +50,10 @@ var dataTemp = new google.visualization.DataTable();
 var dataHum = new google.visualization.DataTable();
         dataHum.addColumn('string', 'Päivämäärä');
         dataHum.addColumn('number', 'Ilmankosteus');
+
+var dataLight = new google.visualization.DataTable();
+        dataLight.addColumn('string', 'Päivämäärä');
+        dataLight.addColumn('number', 'Valoisuus');
         
 const historia = data.map(function(mittaus){
       dataTemp.addRows([
@@ -58,6 +62,10 @@ const historia = data.map(function(mittaus){
 
       dataHum.addRows([
           [mittaus.Timestamp.split('.')[0], parseInt(mittaus.Hum)]
+        ]);
+      
+      dataLight.addRows([
+          [mittaus.Timestamp.split('.')[0], parseInt(mittaus.Light)]
         ]);
    
       taulukko = taulukko + `<tr><td>${mittaus.Hum}</td><td>${mittaus.Temp}</td><td>${mittaus.Light}</td></tr>`; 
@@ -74,6 +82,10 @@ const historia = data.map(function(mittaus){
          var optionsHum = {'title':'Ilmankosteus',
                        'width':1000,
                        'height':500};
+        
+        var optionsLight = {'title':'Valoisuus',
+                       'width':1000,
+                       'height':500};
 
         // Instantiate and draw our chart, passing in some options.
         var chartTemp = new google.visualization.LineChart(document.getElementById('lampotila_div'));
@@ -81,6 +93,9 @@ const historia = data.map(function(mittaus){
 
         var chartHum = new google.visualization.ColumnChart(document.getElementById('kosteus_div'));
         chartHum.draw(dataHum, optionsHum);
+
+        var chartLight = new google.visualization.LineChart(document.getElementById('valoisuus_div'));
+        chartLight.draw(dataLight, optionsLight);
 });
 }
 
@@ -96,11 +111,22 @@ const historia = data.map(function(mittaus){
 </div>
       <div id="lampotila_div"></div>
       <div id="kosteus_div"></div>
+      <div id="valoisuus_div"></div>
 
 
 
 </div>
-
+<div class="kelluva lista">
+       
+        <a href="index.html">Alkuun</a><br>
+        <a href="harrastukset.html">Harrastukset</a><br>
+        
+       
+      <a href="Tyyliharjoitus.html">Tyyliharjoitus</a> <br>
+      <a href="Yhteys2.html"> Ota yhteyttä </a> <br>
+      <a href="weather.html"> SääData </a> <br>
+      <a href="scriptharjoitus.html"> Script harjoitus </a>
+      </a>
 
     
       
